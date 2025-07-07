@@ -14,6 +14,7 @@ import {
   WidgetsRounded,
 } from "@mui/icons-material";
 import SideBarButtons from "../buttons/sideBarButtons";
+import Separator from "../ui/separator";
 
 export default function SideBar() {
   const [activeNav, setActiveNav] = useState("Dashboard");
@@ -42,8 +43,8 @@ export default function SideBar() {
             <span className="font-medium text-sm">Material Dashboard 2</span>
           </div>
         </div>
-
-        <nav className="flex-1 px-4">
+<Separator/>
+        <nav className="flex-1 p-4">
           <div className="space-y-1">
             {sidebarItems.map((item) => (
               <SideBarButtons

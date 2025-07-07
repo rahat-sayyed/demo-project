@@ -1,4 +1,3 @@
-
 import {
   Card,
   CardContent,
@@ -24,6 +23,8 @@ import {
   CreditCardIcon as CardIcon,
   Unlock,
 } from "lucide-react";
+import StatCard from "@/components/cards/statCard";
+import { ChairRounded, PersonRounded } from "@mui/icons-material";
 
 export default function Dashboard() {
   const statsCards = [
@@ -33,8 +34,9 @@ export default function Dashboard() {
       change: "+55%",
       changeText: "than last week",
       positive: true,
-      icon: Briefcase,
-      bgColor: "bg-gray-800",
+      icon: ChairRounded,
+      bgColor: "bg-gradient-to-t from-black to-gray-500",
+
     },
     {
       title: "Today's Users",
@@ -42,8 +44,9 @@ export default function Dashboard() {
       change: "+3%",
       changeText: "than last month",
       positive: true,
-      icon: Users,
-      bgColor: "bg-red-500",
+      icon: PersonRounded,
+      bgColor: "bg-gradient-to-t from-pink-500 to-pink-400",
+
     },
     {
       title: "New Clients",
@@ -51,8 +54,9 @@ export default function Dashboard() {
       change: "-2%",
       changeText: "than yesterday",
       positive: false,
-      icon: FileText,
-      bgColor: "bg-green-500",
+      icon: PersonRounded,
+      bgColor: "bg-gradient-to-t from-green-500 to-green-400",
+
     },
     {
       title: "Sales",
@@ -60,8 +64,8 @@ export default function Dashboard() {
       change: "+5%",
       changeText: "than yesterday",
       positive: true,
-      icon: ShoppingCart,
-      bgColor: "bg-blue-500",
+      icon: ChairRounded,
+      bgColor: "bg-gradient-to-t from-blue-500 to-blue-400",
     },
   ];
 
@@ -156,46 +160,16 @@ export default function Dashboard() {
 
   return (
     <div className="flex h-screen bg-gray-100">
-      {/* Sidebar */}
-     
-      {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        {/* Header */}
-
-        {/* Dashboard Content */}
         <main className="flex-1 overflow-auto p-6">
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             {statsCards.map((card, index) => (
-              <Card key={index} className="relative overflow-hidden">
-                <CardContent className="p-6">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <p className="text-sm font-medium text-gray-600 mb-1">
-                        {card.title}
-                      </p>
-                      <p className="text-2xl font-bold text-gray-900">
-                        {card.value}
-                      </p>
-                      <div className="flex items-center mt-2">
-                        <span
-                          className={`text-sm font-medium ${card.positive ? "text-green-600" : "text-red-600"}`}
-                        >
-                          {card.change}
-                        </span>
-                        <span className="text-sm text-gray-500 ml-1">
-                          {card.changeText}
-                        </span>
-                      </div>
-                    </div>
-                    <div
-                      className={`w-12 h-12 rounded-lg ${card.bgColor} flex items-center justify-center`}
-                    >
-                      <card.icon className="w-6 h-6 text-white" />
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <StatCard
+                key={index}
+                {...card}
+                icon={<card.icon className="w-6 h-6" />}
+              />
             ))}
           </div>
 
