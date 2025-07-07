@@ -8,6 +8,7 @@ import { Providers } from "./providers";
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import SideBar from "@/components/layout/sideBar";
+import Navbar from "@/components/layout/navbar";
 
 export const metadata: Metadata = {
   title: {
@@ -45,7 +46,7 @@ export default function RootLayout({
           <div className="flex">
             <SideBar />
             <div>
-              "Navbar"
+              <Navbar/>
               <main>{children}</main>
               "Footer"
             </div>
