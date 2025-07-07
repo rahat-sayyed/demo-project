@@ -6,19 +6,17 @@ import Separator from "../ui/separator";
 interface statCardProps {
   title: string;
   value: string;
-  change: string;
-  changeText: string;
+  tagNode: React.ReactNode;
+  tagLine: string;
   icon: React.ReactNode;
-  positive: boolean;
   bgColor: string;
 }
 export default function StatCard({
   title,
   value,
-  change,
-  changeText,
   icon,
-  positive,
+  tagNode,
+  tagLine,
   bgColor,
 }: statCardProps) {
   return (
@@ -38,13 +36,8 @@ export default function StatCard({
                 className="text-right self-end"
               />
               <Separator />
-              <div className="flex items-center mt-2">
-                <span
-                  className={`text-sm font-medium ${positive ? "text-green-600" : "text-red-600"}`}
-                >
-                  {change}
-                </span>
-                <span className="text-sm text-gray-500 ml-1">{changeText}</span>
+              <div className="flex items-center mt-2 text-sm">
+               {tagNode}{tagLine}
               </div>
             </div>
           </div>
