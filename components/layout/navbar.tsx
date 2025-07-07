@@ -26,35 +26,34 @@ export default function Navbar() {
   const pathname = usePathname();
   const pathSegments = pathname.split("/").filter((segment) => segment);
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4">
+    <header className="bg-white border-b border-gray-200 px-6 py-4 w-full">
       <div className="flex items-center justify-between">
         <div>
           <Breadcrumb>
             <BreadcrumbList>
-              {pathSegments.map((segment, index) => {
+              {pathSegments.length > 0 ?
+              pathSegments.map((segment, index) => {
                 const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
                 const isLast = index === pathSegments.length - 1;
                 return (
-                  <React.Fragment key={index}>
+                  <React.Fragment key={index+href}>
                     <BreadcrumbItem >
-                      {isLast ? (
-                        <BreadcrumbPage>
-                          {formatSegment(segment)}
-                        </BreadcrumbPage>
-                      ) : (
-                        <BreadcrumbLink href={href}>
+                   
+                        <BreadcrumbLink href={href} className={`${isLast ? "text-gray-700" : ""}`}>
                           {formatSegment(segment)}
                         </BreadcrumbLink>
-                      )}
+                      
                     </BreadcrumbItem>
                    {!isLast && <BreadcrumbSeparator />}
                   </React.Fragment>
                 );
-              })}
+              })
+            :
+            "Home"}
             </BreadcrumbList>
           </Breadcrumb>
           <h1 className="text-lg font-semibold text-gray-900">
-            {formatSegment(pathSegments[pathSegments.length - 1])}
+            {formatSegment(pathSegments[pathSegments.length - 1] ?? "Home")}
           </h1>
         </div>
         <div className="flex items-center gap-2">
