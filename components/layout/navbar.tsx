@@ -26,7 +26,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const pathSegments = pathname.split("/").filter((segment) => segment);
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4 w-full">
+    <header className="bg-white border-b border-gray-200 px-6 py-4 ">
       <div className="flex items-center justify-between">
         <div>
           <Breadcrumb>

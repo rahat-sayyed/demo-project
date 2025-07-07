@@ -13,6 +13,7 @@ import {
   AssignmentRounded,
   WidgetsRounded,
 } from "@mui/icons-material";
+import SideBarButtons from "../buttons/sideBarButtons";
 
 export default function SideBar() {
   const [activeNav, setActiveNav] = useState("Dashboard");
@@ -33,32 +34,25 @@ export default function SideBar() {
   ];
   return (
     <div className="p-3">
-      <div className="w-64 bg-gray-800 text-white flex flex-col h-full rounded-lg">
+      <div className="w-56 text-white flex flex-col h-full rounded-lg bg-gradient-to-t from-[#050000] via-[#313B35] to-[#6E6E6E]">
         {/* header */}
         <div className="p-6">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center">
-              <WidgetsRounded className="w-5 h-5 text-gray-800" />
-            </div>
-            <span className="font-semibold">Material Dashboard 2</span>
+            <WidgetsRounded className="w-5 h-5" />
+            <span className="font-medium text-sm">Material Dashboard 2</span>
           </div>
         </div>
 
         <nav className="flex-1 px-4">
           <div className="space-y-1">
             {sidebarItems.map((item) => (
-              <button
+              <SideBarButtons
                 key={item.name}
-                onClick={() => setActiveNav(item.name)}
-                className={`w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left transition-colors ${
-                  item.name === activeNav
-                    ? "bg-gradient-to-r from-pink-500 to-pink-600 text-white"
-                    : "text-gray-300 hover:bg-gray-700"
-                }`}
-              >
-                <item.icon className="w-5 h-5" />
-                <span>{item.name}</span>
-              </button>
+                icon={<item.icon />}
+                name={item.name}
+                activeItem={activeNav}
+                onclick={() => setActiveNav(item.name)}
+              />
             ))}
           </div>
 
@@ -68,13 +62,11 @@ export default function SideBar() {
             </p>
             <div className="space-y-1">
               {accountItems.map((item) => (
-                <button
+                <SideBarButtons
                   key={item.name}
-                  className="w-full flex items-center space-x-3 px-4 py-3 rounded-lg text-left text-gray-300 hover:bg-gray-700 transition-colors"
-                >
-                  <item.icon className="w-5 h-5" />
-                  <span>{item.name}</span>
-                </button>
+                  icon={<item.icon />}
+                  name={item.name}
+                />
               ))}
             </div>
           </div>
@@ -89,3 +81,4 @@ export default function SideBar() {
     </div>
   );
 }
+

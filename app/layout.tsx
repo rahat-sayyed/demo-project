@@ -45,7 +45,7 @@ export default function RootLayout({
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
           <div className="flex w-full">
             <SideBar />
-            <div className=" min-w-full">
+            <div className="">
               <Navbar/>
               <main>{children}</main>
               "Footer"
