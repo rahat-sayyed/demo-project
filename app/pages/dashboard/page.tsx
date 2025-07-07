@@ -211,7 +211,7 @@ export default function Dashboard() {
                 <div className="h-48 bg-gradient-to-r from-pink-500 to-pink-600 rounded-lg p-4 mb-4">
                   <div className="flex justify-between items-end h-full text-white">
                     {["M", "T", "W", "T", "F", "S", "S"].map((day, i) => (
-                      <div key={day} className="flex flex-col items-center">
+                      <div key={i} className="flex flex-col items-center">
                         <div
                           className="bg-white bg-opacity-30 rounded-sm mb-2"
                           style={{

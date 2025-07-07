@@ -12,7 +12,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { User, Settings, Bell, Search } from "lucide-react";
 import { usePathname } from "next/navigation";
-import { NotificationsRounded, PersonRounded, SettingsRounded } from "@mui/icons-material";
+import {
+  NotificationsRounded,
+  PersonRounded,
+  SettingsRounded,
+} from "@mui/icons-material";
 const formatSegment = (segment: string) =>
   segment
     .split("-")
@@ -31,27 +35,27 @@ export default function Navbar() {
                 const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
                 const isLast = index === pathSegments.length - 1;
                 return (
-                  <React.Fragment key={href}>
-                    <BreadcrumbItem>
+                  <React.Fragment key={index}>
+                    <BreadcrumbItem >
                       {isLast ? (
                         <BreadcrumbPage>
                           {formatSegment(segment)}
                         </BreadcrumbPage>
                       ) : (
-                        <>
-                          <BreadcrumbLink href={href}>
-                            {formatSegment(segment)}
-                          </BreadcrumbLink>
-                          <BreadcrumbSeparator />
-                        </>
+                        <BreadcrumbLink href={href}>
+                          {formatSegment(segment)}
+                        </BreadcrumbLink>
                       )}
                     </BreadcrumbItem>
+                   {!isLast && <BreadcrumbSeparator />}
                   </React.Fragment>
                 );
               })}
             </BreadcrumbList>
           </Breadcrumb>
-          <h1 className="text-lg font-semibold text-gray-900">{formatSegment(pathSegments[pathSegments.length - 1])}</h1>
+          <h1 className="text-lg font-semibold text-gray-900">
+            {formatSegment(pathSegments[pathSegments.length - 1])}
+          </h1>
         </div>
         <div className="flex items-center gap-2">
           <div className="relative">
@@ -64,17 +68,17 @@ export default function Navbar() {
           >
             ONLINE BUILDER
           </Button>
-          <div className="flex text-gray-500 gap-0" >
-          <Button variant="ghost" size="sm">
-            <PersonRounded className="size-2" />
-            Sign In
-          </Button>
-          <Button variant="ghost" className="p-2">
-            <SettingsRounded className="size-2" />
-          </Button>
-          <Button variant="ghost" className="p-2">
-            <NotificationsRounded className="size-2" />
-          </Button>
+          <div className="flex text-gray-500 gap-0">
+            <Button variant="ghost" size="sm">
+              <PersonRounded className="size-2" />
+              Sign In
+            </Button>
+            <Button variant="ghost" className="p-2">
+              <SettingsRounded className="size-2" />
+            </Button>
+            <Button variant="ghost" className="p-2">
+              <NotificationsRounded className="size-2" />
+            </Button>
           </div>
         </div>
       </div>
