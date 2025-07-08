@@ -4,6 +4,16 @@ import { Line, LineChart, XAxis, YAxis, CartesianGrid } from "recharts";
 
 import { ChartContainer } from "@/components/ui/chart";
 
+/**
+ * LineChart component
+ *
+ * A chart component for displaying line data.
+ *
+ * @param {object} props
+ * @param {array} props.data - The data for the chart.
+ *
+ * @returns {JSX.Element} The LineChart component.
+ */
 interface LineChartProps {
   data: Array<{ month: string; value: number }>;
   variant: "dark" | "green";

@@ -4,7 +4,17 @@ import { Bar, BarChart, XAxis, YAxis, CartesianGrid } from "recharts";
 
 import { ChartContainer } from "@/components/ui/chart";
 
-interface PinkBarChartProps {
+/**
+ * WebsiteViewChart component
+ *
+ * A chart component for displaying website views.
+ *
+ * @param {object} props
+ * @param {array} props.data - The data for the chart.
+ *
+ * @returns {JSX.Element} The WebsiteViewChart component.
+ */
+interface WebsiteViewChartProps {
   data: Array<{ day: string; value: number }>;
   className?: string;
 }
@@ -12,7 +22,7 @@ interface PinkBarChartProps {
 export function WebsiteViewChart({
   data,
   className = "h-44 w-full",
-}: PinkBarChartProps) {
+}: WebsiteViewChartProps) {
   return (
     <ChartContainer
       className={`${className} bg-pink-500 text-white rounded-lg pt-1 pr-1`}

@@ -1,5 +1,18 @@
 import React from "react";
 
+/**
+ * SideBarButtons component
+ *
+ * A button component specifically designed for the sidebar.
+ *
+ * @param {object} props
+ * @param {React.ReactNode} props.icon - The icon to display inside the button.
+ * @param {string} props.name - The name of the button.
+ * @param {string} [props.activeItem] - The currently active item.
+ * @param {function} [props.onclick] - The callback function when the button is clicked.
+ *
+ * @returns {JSX.Element} The SideBarButtons component.
+ */
 export default function SideBarButtons({
   icon,
   name,

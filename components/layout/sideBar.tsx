@@ -12,10 +12,8 @@ import {
   AssignmentRounded,
   WidgetsRounded,
 } from "@mui/icons-material";
-
 import SideBarButtons from "../buttons/sideBarButtons";
 import Separator from "../ui/separator";
-
 import { Button } from "@/components/ui/button";
 
 export default function SideBar() {

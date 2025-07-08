@@ -16,6 +16,18 @@ interface statCardProps {
   bgColor: string;
   isGraph?: boolean;
 }
+/**
+ * StatCard component
+ *
+ * A card component for displaying statistics.
+ *
+ * @param {object} props
+ * @param {string} props.title - The title of the card.
+ * @param {string} props.description - The description of the card.
+ * @param {React.ReactNode} props.children - The content of the card.
+ *
+ * @returns {JSX.Element} The StatCard component.
+ */
 export default function StatCard({
   title,
   value,

@@ -4,6 +4,18 @@ import React from "react";
 import { Button } from "../ui/button";
 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
+/**
+ * DataCard component
+ *
+ * A card component for displaying data.
+ *
+ * @param {object} props
+ * @param {string} props.title - The title of the card.
+ * @param {string} props.description - The description of the card.
+ * @param {React.ReactNode} props.children - The content of the card.
+ *
+ * @returns {JSX.Element} The DataCard component.
+ */
 interface CardHeaderProps {
   title: string;
   value: string;
