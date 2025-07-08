@@ -30,7 +30,7 @@ export const statsCards = [
     value: "$103,430",
     icon: ChairRounded,
     bgColor: "bg-gradient-to-t from-blue-500 to-blue-400",
-    tagNode: <span className="text-green-600">+55%</span>,
+    tagNode: <span className="text-green-600">+5%</span>,
     tagLine: "than yesterday",
   },
 ];

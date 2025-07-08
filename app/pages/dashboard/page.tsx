@@ -17,6 +17,7 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { projects } from "@/data/tableData";
+import { cn } from "@/lib/utils";
 export default function Dashboard() {
   const timelineContent = timelineItems.map((item, index) => {
     const IconComponent = item.icon;
@@ -70,7 +71,7 @@ export default function Dashboard() {
               content={TableContent()}
               icon={
                 <span className="font-semibold">
-                  <Check className="size-4 inline-block text-blue-500" /> 30
+                  <Check className="size-4 inline-block text-blue-500" strokeWidth={3} /> 30
                   done
                 </span>
               }
@@ -81,7 +82,7 @@ export default function Dashboard() {
               content={<div className="grid gap-3">{timelineContent}</div>}
               icon={
                 <span className="font-semibold">
-                  <ArrowUp className="size-4 inline-block text-green-500" /> 24%
+                  <ArrowUp className="size-4 inline-block text-green-500" strokeWidth={3} /> 24%
                 </span>
               }
               title="Orders Overview"
@@ -126,7 +127,7 @@ function TableContent() {
                 >
                   {project.icon}
                 </div>
-                <span className="font-medium text-gray-900">
+                <span className="font-semibold text-gray-900">
                   {project.name}
                 </span>
               </div>
@@ -147,7 +148,7 @@ function TableContent() {
               </div>
             </TableCell>
             <TableCell className="py-2">
-              <span className="font-medium text-gray-900">
+              <span className="font-semibold text-gray-600">
                 {project.budget}
               </span>
             </TableCell>
@@ -158,19 +159,7 @@ function TableContent() {
                 </p>
                 <div className="flex-1 max-w-[120px]">
                   <Progress
-                    className="h-2"
-                    style={
-                      {
-                        "--progress-background":
-                          project.completion === 100
-                            ? "#10b981"
-                            : project.completion >= 50
-                              ? "#3b82f6"
-                              : project.completion >= 25
-                                ? "#f59e0b"
-                                : "#ef4444",
-                      } as React.CSSProperties
-                    }
+                    className={cn("h-1", project.completion === 100 ? "[&>div]:bg-green-500" : "[&>div]:bg-blue-500")}
                     value={project.completion}
                   />
                 </div>

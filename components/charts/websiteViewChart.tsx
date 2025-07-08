@@ -41,7 +41,6 @@ export function WebsiteViewChart({
         <CartesianGrid
           stroke="rgba(255, 255, 255, 0.3)"
           strokeDasharray="3 3"
-          vertical={false}
         />
         <XAxis
           axisLine={false}
