@@ -44,7 +44,7 @@ export default function StatCard({
               />
               <Separator />
               <div className="flex items-center mt-2 text-sm">
-               {tagNode}{tagLine}
+               {tagNode} &nbsp;{tagLine}
               </div>
             </div>
           </div>

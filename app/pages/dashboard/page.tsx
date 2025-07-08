@@ -26,6 +26,7 @@ import {
 import StatCard from "@/components/cards/statCard";
 import { ChairRounded, PersonRounded } from "@mui/icons-material";
 import { WebsiteViewChart } from "@/components/charts/websiteViewChart";
+import { chartsCardData } from "@/data/chartsData";
 
 export default function Dashboard() {
   const statsCards = [
@@ -185,126 +186,14 @@ export default function Dashboard() {
           </div>
 
           {/* Charts Row */}
-
-          <StatCard
-            title={"Website view"}
-            value={"2300"}
-            tagNode={<span className="text-green-600">+55%</span>}
-            tagLine={"than last week"}
-            bgColor={"bg-pink-500"}
-            isGraph={true}
-            icon={
-              <Card className="bg-pink-500 text-white">
-                <CardContent className="p-6">
-                  <WebsiteViewChart data={barChartData} />
-                </CardContent>
-              </Card>
-            }
-          />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
-            {/* Website Views Chart */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Website Views</CardTitle>
-                <CardDescription>Last Campaign Performance</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="h-48 bg-gradient-to-r from-pink-500 to-pink-600 rounded-lg p-4 mb-4">
-                  <div className="flex justify-between items-end h-full text-white">
-                    {["M", "T", "W", "T", "F", "S", "S"].map((day, i) => (
-                      <div key={i} className="flex flex-col items-center">
-                        <div
-                          className="bg-white bg-opacity-30 rounded-sm mb-2"
-                          style={{
-                            height: `${Math.random() * 80 + 20}%`,
-                            width: "12px",
-                          }}
-                        />
-                        <span className="text-xs">{day}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <p className="text-sm text-gray-500">
-                  📅 campaign sent 2 days ago
-                </p>
-              </CardContent>
-            </Card>
-
-            {/* Daily Sales Chart */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Daily Sales</CardTitle>
-                <CardDescription>
-                  (+15%) increase in today sales
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="h-48 bg-gradient-to-r from-green-500 to-green-600 rounded-lg p-4 mb-4">
-                  <div className="h-full flex items-end justify-between text-white">
-                    {[
-                      "Apr",
-                      "May",
-                      "Jun",
-                      "Jul",
-                      "Aug",
-                      "Sep",
-                      "Oct",
-                      "Nov",
-                      "Dec",
-                    ].map((month, i) => (
-                      <div key={month} className="flex flex-col items-center">
-                        <div
-                          className="w-2 h-2 bg-white rounded-full mb-1"
-                          style={{
-                            marginBottom: `${Math.random() * 60 + 10}px`,
-                          }}
-                        />
-                        <span className="text-xs">{month}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <p className="text-sm text-gray-500">🕒 updated 4 min ago</p>
-              </CardContent>
-            </Card>
-
-            {/* Completed Tasks Chart */}
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-lg">Completed Tasks</CardTitle>
-                <CardDescription>Last Campaign Performance</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="h-48 bg-gray-800 rounded-lg p-4 mb-4">
-                  <div className="h-full flex items-end justify-between text-white">
-                    {[
-                      "Apr",
-                      "May",
-                      "Jun",
-                      "Jul",
-                      "Aug",
-                      "Sep",
-                      "Oct",
-                      "Nov",
-                      "Dec",
-                    ].map((month, i) => (
-                      <div key={month} className="flex flex-col items-center">
-                        <div
-                          className="w-2 h-2 bg-white rounded-full mb-1"
-                          style={{
-                            marginBottom: `${Math.random() * 60 + 10}px`,
-                          }}
-                        />
-                        <span className="text-xs">{month}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-                <p className="text-sm text-gray-500">⏰ just updated</p>
-              </CardContent>
-            </Card>
+            {chartsCardData.map((card, index) => (
+              <StatCard key={index} {...card} isGraph={true} />
+            ))}
           </div>
+
+        
+       
 
           {/* Bottom Section */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
