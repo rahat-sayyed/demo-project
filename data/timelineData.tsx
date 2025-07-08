@@ -9,13 +9,13 @@ export const timelineItems = [
   },
   {
     icon: Code,
-    iconColor: "text-gray-600",
+    iconColor: "text-red-600",
     title: "New order #1832412",
     timestamp: "21 DEC 11 PM",
   },
   {
     icon: ShoppingCart,
-    iconColor: "text-blue-600",
+    iconColor: "text-blue-500",
     title: "Server payments for April",
     timestamp: "21 DEC 9:34 PM",
   },
@@ -27,7 +27,7 @@ export const timelineItems = [
   },
   {
     icon: Key,
-    iconColor: "text-pink-500",
+    iconColor: "text-red-500",
     title: "Unlock packages for development",
     timestamp: "18 DEC 4:54 AM",
   },
