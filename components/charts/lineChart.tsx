@@ -38,7 +38,11 @@ export function CustomLineChart({
         },
       }}
     >
-      <LineChart data={data}>
+      <LineChart data={data} margin={{
+              left: -20,
+              top: 20,
+              right: 12,
+            }}>
         <CartesianGrid
           horizontal={true}
           stroke={gridStroke}
@@ -48,7 +52,7 @@ export function CustomLineChart({
         <XAxis
           axisLine={false}
           dataKey="month"
-          tick={{ fill: "#ff0000", fontSize: 12 }}
+          tick={{ fill: "#ffffff", fontSize: 12 }}
           tickLine={false}
         />
         <YAxis
@@ -60,9 +64,9 @@ export function CustomLineChart({
         />
         <Line
           dataKey="value"
-          dot={{ fill: "#ffffff", strokeWidth: 0, r: 4 }}
+          dot={{ fill: "#ffffff", strokeWidth: 0, r: 3}}
           stroke="#ffffff"
-          strokeWidth={3}
+          strokeWidth={1}
           type="monotone"
         />
       </LineChart>
