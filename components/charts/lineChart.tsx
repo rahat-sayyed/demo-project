@@ -2,7 +2,6 @@
 
 import { ChartContainer } from "@/components/ui/chart";
 import { Line, LineChart, XAxis, YAxis, CartesianGrid } from "recharts";
-import { Card, CardContent } from "../ui/card";
 
 interface LineChartProps {
   data: Array<{ month: string; value: number }>;

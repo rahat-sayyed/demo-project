@@ -2,7 +2,7 @@
 
 import { ChartContainer } from "@/components/ui/chart";
 import { Bar, BarChart, XAxis, YAxis, CartesianGrid } from "recharts";
-import { Card, CardContent } from "../ui/card";
+
 
 interface PinkBarChartProps {
   data: Array<{ day: string; value: number }>;
