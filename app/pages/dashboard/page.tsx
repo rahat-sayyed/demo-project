@@ -36,7 +36,7 @@ export default function Dashboard() {
       </div>
     );
   });
-  
+
   return (
     <div className="flex h-screen bg-gray-100">
       <div className="flex-1 flex flex-col overflow-hidden">
@@ -59,13 +59,14 @@ export default function Dashboard() {
             ))}
           </div>
 
+          {/* Table Row & Timeline */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <DataCard
               title="Projects"
               value="30 done this month"
               icon="📊"
               showMore
-              content={tableContent()}
+              content={TableContent()}
             />
             <DataCard
               title="Orders Overview"
@@ -75,14 +76,12 @@ export default function Dashboard() {
             />
           </div>
         </main>
-
-        {/* Footer */}
       </div>
     </div>
   );
 }
 
-function tableContent() {
+function TableContent() {
   return (
     <Table>
       <TableHeader>
