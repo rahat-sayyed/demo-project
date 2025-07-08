@@ -18,24 +18,28 @@ import { projects } from "@/data/tableData";
 
 export default function Dashboard() {
   const timelineContent = timelineItems.map((item, index) => {
-    const IconComponent = item.icon;
-    return (
-      <div key={index} className="relative flex items-start gap-4">
-        {/* Timeline dot with icon */}
-        <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white ">
-          <IconComponent className={`h-4 w-4 ${item.iconColor}`} />
-        </div>
-
-        {/* Content */}
-        <div className="flex-1 min-w-0 pb-2">
-          <p className="text-sm font-medium text-gray-900 leading-5">
-            {item.title}
-          </p>
-          <p className="text-xs text-gray-500 mt-1">{item.timestamp}</p>
-        </div>
+  const IconComponent = item.icon;
+  return (
+    <div key={index} className="relative flex items-start gap-4">
+    
+      <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white">
+        <IconComponent className={`h-4 w-4 ${item.iconColor}`} />
       </div>
-    );
-  });
+
+      
+        <div
+          className="absolute left-[15px] top-8 h-[calc(100%-1rem)] w-[1px] bg-gray-300"
+          style={{ transform: "translateX(-50%)" }}
+        />
+
+      
+      <div className="flex-1 min-w-0 pb-2">
+        <p className="text-sm font-medium text-gray-900 leading-5">{item.title}</p>
+        <p className="text-xs text-gray-500 mt-1">{item.timestamp}</p>
+      </div>
+    </div>
+  );
+});
 
   return (
     <div className="flex h-screen bg-gray-100">
@@ -73,7 +77,10 @@ export default function Dashboard() {
               title="Orders Overview"
               value="30 done this month"
               icon="📊"
-              content={timelineContent}
+              content={<div className="grid gap-3">
+              {timelineContent}
+              </div>
+            }
             />
           </div>
         </main>
