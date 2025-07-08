@@ -36,7 +36,7 @@ export default function SideBar() {
 
   return (
     <div className="p-3 h-screen">
-      <div className="w-56 text-white flex flex-col h-full rounded-lg bg-gradient-to-t from-[#050000] via-[#313B35] to-[#6E6E6E]">
+      <div className="w-56 text-white flex flex-col h-full rounded-lg bg-gradient-to-t from-black via-black/80 to-black/70">
         {/* header */}
         <div className="p-6">
           <div className="flex items-center space-x-2">
