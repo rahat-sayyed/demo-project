@@ -34,7 +34,7 @@ export default function SideBar() {
     { name: "Sign Up", icon: AssignmentRounded },
   ];
   return (
-    <div className="p-3">
+    <div className="p-3 h-screen">
       <div className="w-56 text-white flex flex-col h-full rounded-lg bg-gradient-to-t from-[#050000] via-[#313B35] to-[#6E6E6E]">
         {/* header */}
         <div className="p-6">

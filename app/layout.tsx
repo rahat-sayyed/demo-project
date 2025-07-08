@@ -44,12 +44,14 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <div className="flex w-full">
-            <SideBar />
-            <div className="">
-              <Navbar/>
-              <main>{children}</main>
-              <Footer/>
+          <div className="flex min-h-screen w-full">
+            <div className="fixed h-screen w-56">
+              <SideBar />
+            </div>
+            <div className="flex-1 ml-56 overflow-auto">
+              <Navbar />
+              <main className="flex-1">{children}</main>
+              <Footer />
             </div>
           </div>
         </Providers>
