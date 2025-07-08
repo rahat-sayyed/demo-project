@@ -33,11 +33,16 @@ export function WebsiteViewChart({
         },
       }}
     >
-      <BarChart accessibilityLayer barCategoryGap="60%" data={data} margin={{
-              left: -20,
-              top: 20,
-              right: 12,
-            }}>
+      <BarChart
+        accessibilityLayer
+        barCategoryGap="60%"
+        data={data}
+        margin={{
+          left: -20,
+          top: 20,
+          right: 12,
+        }}
+      >
         <CartesianGrid
           stroke="rgba(255, 255, 255, 0.3)"
           strokeDasharray="3 3"

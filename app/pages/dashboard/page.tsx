@@ -40,7 +40,6 @@ export default function Dashboard() {
     );
   });
 
-
   return (
     <div className="flex ">
       <div className="flex-1 flex flex-col overflow-hidden">
@@ -71,8 +70,11 @@ export default function Dashboard() {
               content={TableContent()}
               icon={
                 <span className="font-semibold">
-                  <Check className="size-4 inline-block text-blue-500" strokeWidth={3} /> 30
-                  done
+                  <Check
+                    className="size-4 inline-block text-blue-500"
+                    strokeWidth={3}
+                  />{" "}
+                  30 done
                 </span>
               }
               title="Projects"
@@ -82,7 +84,11 @@ export default function Dashboard() {
               content={<div className="grid gap-3">{timelineContent}</div>}
               icon={
                 <span className="font-semibold">
-                  <ArrowUp className="size-4 inline-block text-green-500" strokeWidth={3} /> 24%
+                  <ArrowUp
+                    className="size-4 inline-block text-green-500"
+                    strokeWidth={3}
+                  />{" "}
+                  24%
                 </span>
               }
               title="Orders Overview"
@@ -159,7 +165,12 @@ function TableContent() {
                 </p>
                 <div className="flex-1 max-w-[120px]">
                   <Progress
-                    className={cn("h-1", project.completion === 100 ? "[&>div]:bg-green-500" : "[&>div]:bg-blue-500")}
+                    className={cn(
+                      "h-1",
+                      project.completion === 100
+                        ? "[&>div]:bg-green-500"
+                        : "[&>div]:bg-blue-500",
+                    )}
                     value={project.completion}
                   />
                 </div>

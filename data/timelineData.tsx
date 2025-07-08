@@ -1,4 +1,11 @@
-import { CodeRounded, CreditCardRounded, KeyRounded, NotificationsRounded, PaymentsRounded, ShoppingCartRounded } from "@mui/icons-material";
+import {
+  CodeRounded,
+  CreditCardRounded,
+  KeyRounded,
+  NotificationsRounded,
+  PaymentsRounded,
+  ShoppingCartRounded,
+} from "@mui/icons-material";
 
 export const timelineItems = [
   {

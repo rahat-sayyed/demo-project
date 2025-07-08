@@ -38,11 +38,14 @@ export function CustomLineChart({
         },
       }}
     >
-      <LineChart data={data} margin={{
-              left: -20,
-              top: 20,
-              right: 12,
-            }}>
+      <LineChart
+        data={data}
+        margin={{
+          left: -20,
+          top: 20,
+          right: 12,
+        }}
+      >
         <CartesianGrid
           horizontal={true}
           stroke={gridStroke}
@@ -64,7 +67,7 @@ export function CustomLineChart({
         />
         <Line
           dataKey="value"
-          dot={{ fill: "#ffffff", strokeWidth: 0, r: 3}}
+          dot={{ fill: "#ffffff", strokeWidth: 0, r: 3 }}
           stroke="#ffffff"
           strokeWidth={1}
           type="monotone"
