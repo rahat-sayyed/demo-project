@@ -9,6 +9,7 @@ import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import SideBar from "@/components/layout/sideBar";
 import Navbar from "@/components/layout/navbar";
+import Footer from "@/components/layout/footer";
 
 export const metadata: Metadata = {
   title: {
@@ -48,7 +49,7 @@ export default function RootLayout({
             <div className="">
               <Navbar/>
               <main>{children}</main>
-              "Footer"
+              <Footer/>
             </div>
           </div>
         </Providers>
