@@ -1,26 +1,27 @@
 import React from "react";
 import { Button } from "../ui/button";
 import { Heart, Settings } from "lucide-react";
+import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-200 px-6 py-4">
-      <div className="flex items-center justify-between text-sm text-gray-500">
+    <footer className="p-8">
+      <div className="flex items-center justify-between text-sm text-gray-500 relative">
         <div className="flex items-center space-x-1">
           <span>© 2022, made with</span>
-          <Heart className="w-4 h-4 text-red-500 fill-current" />
+          <Heart className="w-4 h-4 fill-current" />
           <span>by</span>
-          <span className="font-medium text-gray-900">Creative Tim</span>
+          <span className="font-semibold text-gray-900">Creative Tim</span>
           <span>for a better web.</span>
         </div>
-        <div className="flex items-center space-x-6">
-          <span>Creative Tim</span>
-          <span>About Us</span>
-          <span>Blog</span>
-          <Button variant="ghost" size="icon">
+        <div className="flex items-center space-x-6 mr-16">
+          <Link href="#">Creative Tim</Link>
+          <Link href="#">About Us</Link>
+          <Link href="#">Blog</Link>
+        </div>
+          <Button variant="secondary" size="icon" className="absolute right-0 rounded-full bg-gray-200 hover:bg-gray-300">
             <Settings className="w-4 h-4" />
           </Button>
-        </div>
       </div>
     </footer>
   );

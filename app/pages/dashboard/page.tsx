@@ -22,13 +22,12 @@ export default function Dashboard() {
     const IconComponent = item.icon;
     return (
       <div key={index} className="relative flex items-start gap-4">
-        <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white">
+        <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white ">
           <IconComponent className={`h-4 w-4 ${item.iconColor}`} />
         </div>
 
         <div
-          className="absolute left-[15px] top-8 h-[calc(100%-1rem)] w-[1px] bg-gray-300"
-          style={{ transform: "translateX(-50%)" }}
+          className="absolute left-[15px] top-8 h-[calc(100%-1rem)] w-[1px] bg-gray-300 translate-x-1/2"
         />
 
         <div className="flex-1 min-w-0 pb-2">
@@ -77,9 +76,9 @@ export default function Dashboard() {
   //   ];
 
   return (
-    <div className="flex bg-gray-100">
+    <div className="flex ">
       <div className="flex-1 flex flex-col overflow-hidden">
-        <main className="flex-1 p-6">
+        <main className="flex-1 px-6">
           {/* Stats Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
             {statsCards.map((card, index) => (
@@ -92,7 +91,7 @@ export default function Dashboard() {
           </div>
 
           {/* Charts Row */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 my-6">
             {chartsCardData.map((card, index) => (
               <StatCard key={index} {...card} isGraph={true} />
             ))}

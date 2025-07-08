@@ -44,7 +44,7 @@ export default function RootLayout({
         )}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "light" }}>
-          <div className="flex min-h-screen w-full">
+          <div className="flex min-h-screen w-full bg-gray-100">
             <div className="fixed h-screen w-56">
               <SideBar />
             </div>

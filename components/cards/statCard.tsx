@@ -23,7 +23,7 @@ export default function StatCard({
   isGraph,
 }: statCardProps) {
   return (
-    // <div className="relative p-2 h-fit flex flex-col justify-end">
+    <div className="mt-3">
       <Card className="relative rounded-lg">
      {!isGraph &&
       <div
@@ -50,6 +50,6 @@ export default function StatCard({
           </div>
         </CardContent>
       </Card>
-    // </div>
+   </div>
   );
 }

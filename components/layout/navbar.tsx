@@ -26,7 +26,7 @@ export default function Navbar() {
   const pathname = usePathname();
   const pathSegments = pathname.split("/").filter((segment) => segment);
   return (
-    <header className="bg-white border-b border-gray-200 px-6 py-4 ">
+    <header className="px-6 py-4 ">
       <div className="flex items-center justify-between">
         <div>
           <Breadcrumb>
@@ -58,7 +58,7 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-2">
           <div className="relative">
-            <Input placeholder="Type here..." className="p-2 md:min-w-40" />
+            <Input placeholder="Type here..." className="p-2 md:min-w-40 bg-transparent" />
           </div>
           <Button
             variant="outline"
