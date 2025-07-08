@@ -1,6 +1,8 @@
 import { MoreVertical } from "lucide-react";
 import React from "react";
+
 import { Button } from "../ui/button";
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 interface CardHeaderProps {
   title: string;
@@ -30,7 +32,7 @@ export default function DataCard({
           </div>
           <div>
             {showMore && (
-              <Button variant="ghost" size="icon">
+              <Button size="icon" variant="ghost">
                 <MoreVertical className="w-4 h-4" />
               </Button>
             )}

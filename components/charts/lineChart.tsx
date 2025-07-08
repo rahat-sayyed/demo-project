@@ -1,7 +1,8 @@
 "use client";
 
-import { ChartContainer } from "@/components/ui/chart";
 import { Line, LineChart, XAxis, YAxis, CartesianGrid } from "recharts";
+
+import { ChartContainer } from "@/components/ui/chart";
 
 interface LineChartProps {
   data: Array<{ month: string; value: number }>;
@@ -19,39 +20,39 @@ export function CustomLineChart({
 
   return (
     <ChartContainer
+      className={`${className} bg-gray-800 text-white rounded-lg pt-1 pr-1`}
       config={{
         value: {
           label: "Value",
           color: "#ffffff",
         },
       }}
-      className={`${className} bg-gray-800 text-white rounded-lg pt-1 pr-1`}
     >
       <LineChart data={data}>
         <CartesianGrid
-          strokeDasharray="3 3"
-          stroke={gridStroke}
           horizontal={true}
+          stroke={gridStroke}
+          strokeDasharray="3 3"
           vertical={false}
         />
         <XAxis
-          dataKey="month"
           axisLine={false}
-          tickLine={false}
+          dataKey="month"
           tick={{ fill: "#ff0000", fontSize: 12 }}
+          tickLine={false}
         />
         <YAxis
           axisLine={false}
-          tickLine={false}
-          tick={{ fill: "#ffffff", fontSize: 12 }}
           domain={[0, 600]}
+          tick={{ fill: "#ffffff", fontSize: 12 }}
+          tickLine={false}
           ticks={[0, 200, 400, 600]}
         />
         <Line
           dataKey="value"
+          dot={{ fill: "#ffffff", strokeWidth: 0, r: 4 }}
           stroke="#ffffff"
           strokeWidth={3}
-          dot={{ fill: "#ffffff", strokeWidth: 0, r: 4 }}
           type="monotone"
         />
       </LineChart>

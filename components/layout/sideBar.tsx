@@ -1,6 +1,5 @@
 "use client";
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button";
 import {
   DashboardRounded,
   TableViewRounded,
@@ -13,8 +12,11 @@ import {
   AssignmentRounded,
   WidgetsRounded,
 } from "@mui/icons-material";
+
 import SideBarButtons from "../buttons/sideBarButtons";
 import Separator from "../ui/separator";
+
+import { Button } from "@/components/ui/button";
 
 export default function SideBar() {
   const [activeNav, setActiveNav] = useState("Dashboard");
@@ -33,6 +35,7 @@ export default function SideBar() {
     { name: "Sign In", icon: LoginRounded },
     { name: "Sign Up", icon: AssignmentRounded },
   ];
+
   return (
     <div className="p-3 h-screen">
       <div className="w-56 text-white flex flex-col h-full rounded-lg bg-gradient-to-t from-[#050000] via-[#313B35] to-[#6E6E6E]">
@@ -49,9 +52,9 @@ export default function SideBar() {
             {sidebarItems.map((item) => (
               <SideBarButtons
                 key={item.name}
+                activeItem={activeNav}
                 icon={<item.icon />}
                 name={item.name}
-                activeItem={activeNav}
                 onclick={() => setActiveNav(item.name)}
               />
             ))}

@@ -1,4 +1,6 @@
 import React from "react";
+import { ArrowUp, Check } from "lucide-react";
+
 import DataCard from "@/components/cards/dataCard";
 import StatCard from "@/components/cards/statCard";
 import { chartsCardData } from "@/data/chartsData";
@@ -15,11 +17,10 @@ import {
 import { Progress } from "@/components/ui/progress";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { projects } from "@/data/tableData";
-import { ChairRounded, PersonRounded } from "@mui/icons-material";
-import { ArrowUp, Check } from "lucide-react";
 export default function Dashboard() {
   const timelineContent = timelineItems.map((item, index) => {
     const IconComponent = item.icon;
+
     return (
       <div key={index} className="relative flex items-start gap-4">
         <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white ">
@@ -98,27 +99,27 @@ export default function Dashboard() {
           {/* Table Row & Timeline */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <DataCard
-              title="Projects"
-              value="this month"
+              showMore
+              className="lg:col-span-2"
+              content={TableContent()}
               icon={
                 <span className="font-semibold">
                   <Check className="size-4 inline-block text-blue-500" /> 30
                   done
                 </span>
               }
-              showMore
-              content={TableContent()}
-              className="lg:col-span-2"
+              title="Projects"
+              value="this month"
             />
             <DataCard
-              title="Orders Overview"
-              value="30 done this month"
+              content={<div className="grid gap-3">{timelineContent}</div>}
               icon={
                 <span className="font-semibold">
                   <ArrowUp className="size-4 inline-block text-green-500" /> 24%
                 </span>
               }
-              content={<div className="grid gap-3">{timelineContent}</div>}
+              title="Orders Overview"
+              value="30 done this month"
             />
           </div>
         </main>
@@ -169,8 +170,8 @@ function TableContent() {
                 {project.members.map((member, index) => (
                   <Avatar key={index} className="w-6 h-6 border-1 border-white">
                     <AvatarImage
-                      src={member.avatar || "/placeholder.svg"}
                       alt={member.name}
+                      src={member.avatar || "/placeholder.svg"}
                     />
                     <AvatarFallback className="text-xs bg-gray-300">
                       {member.name.charAt(0)}
@@ -191,7 +192,6 @@ function TableContent() {
                 </p>
                 <div className="flex-1 max-w-[120px]">
                   <Progress
-                    value={project.completion}
                     className="h-2"
                     style={
                       {
@@ -205,6 +205,7 @@ function TableContent() {
                                 : "#ef4444",
                       } as React.CSSProperties
                     }
+                    value={project.completion}
                   />
                 </div>
               </div>

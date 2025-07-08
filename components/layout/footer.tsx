@@ -1,7 +1,8 @@
 import React from "react";
-import { Button } from "../ui/button";
 import { Heart, Settings } from "lucide-react";
 import Link from "next/link";
+
+import { Button } from "../ui/button";
 
 export default function Footer() {
   return (
@@ -20,9 +21,9 @@ export default function Footer() {
           <Link href="#">Blog</Link>
         </div>
         <Button
-          variant="secondary"
-          size="icon"
           className="absolute right-0 rounded-full bg-gray-200 hover:bg-gray-300"
+          size="icon"
+          variant="secondary"
         >
           <Settings className="w-4 h-4" />
         </Button>

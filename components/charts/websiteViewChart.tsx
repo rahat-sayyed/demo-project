@@ -1,7 +1,8 @@
 "use client";
 
-import { ChartContainer } from "@/components/ui/chart";
 import { Bar, BarChart, XAxis, YAxis, CartesianGrid } from "recharts";
+
+import { ChartContainer } from "@/components/ui/chart";
 
 interface PinkBarChartProps {
   data: Array<{ day: string; value: number }>;
@@ -14,32 +15,32 @@ export function WebsiteViewChart({
 }: PinkBarChartProps) {
   return (
     <ChartContainer
+      className={`${className} bg-pink-500 text-white rounded-lg pt-1 pr-1`}
       config={{
         value: {
           label: "Value",
           color: "#ffffff",
         },
       }}
-      className={`${className} bg-pink-500 text-white rounded-lg pt-1 pr-1`}
     >
-      <BarChart data={data} barCategoryGap="60%">
+      <BarChart barCategoryGap="60%" data={data}>
         <CartesianGrid
-          strokeDasharray="3 3"
-          stroke="rgba(255, 255, 255, 0.3)"
           horizontal={true}
+          stroke="rgba(255, 255, 255, 0.3)"
+          strokeDasharray="3 3"
           vertical={false}
         />
         <XAxis
-          dataKey="day"
           axisLine={false}
-          tickLine={false}
+          dataKey="day"
           tick={{ fill: "#ffffff", fontSize: 12 }}
+          tickLine={false}
         />
         <YAxis
           axisLine={false}
-          tickLine={false}
-          tick={{ fill: "#ffffff", fontSize: 12 }}
           domain={[0, 60]}
+          tick={{ fill: "#ffffff", fontSize: 12 }}
+          tickLine={false}
           ticks={[0, 20, 40, 60]}
         />
         <Bar dataKey="value" fill="#ffffff" radius={[4, 4, 0, 0]} />

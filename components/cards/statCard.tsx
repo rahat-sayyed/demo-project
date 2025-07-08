@@ -1,7 +1,10 @@
-import { Card, CardContent } from "@/components/ui/card";
 import React from "react";
-import CustomCardHeader from "./cardHeader";
+
 import Separator from "../ui/separator";
+
+import CustomCardHeader from "./cardHeader";
+
+import { Card, CardContent } from "@/components/ui/card";
 import { cn } from "@/lib/utils";
 
 interface statCardProps {
@@ -37,10 +40,10 @@ export default function StatCard({
             <div className="flex flex-col w-full gap-2">
               {isGraph && <div className="w-full -mt-8">{icon}</div>}
               <CustomCardHeader
+                className={isGraph ? "" : "text-right self-end"}
+                reverse={isGraph}
                 title={title}
                 value={value}
-                reverse={isGraph}
-                className={isGraph ? "" : "text-right self-end"}
               />
               <Separator />
               <div className="flex items-center mt-2 text-sm text-gray-600">

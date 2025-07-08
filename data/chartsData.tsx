@@ -1,6 +1,7 @@
+import { Clock } from "lucide-react";
+
 import { CustomLineChart } from "@/components/charts/lineChart";
 import { WebsiteViewChart } from "@/components/charts/websiteViewChart";
-import { Clock } from "lucide-react";
 
 const lineChartData = [
   { month: "Apr", value: 50 },
