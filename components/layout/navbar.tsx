@@ -27,7 +27,7 @@ export default function Navbar() {
   const pathSegments = pathname.split("/").filter((segment) => segment);
 
   return (
-    <header className="px-6 py-4 ">
+    <header className="px-6 py-4">
       <div className="flex items-center justify-between">
         <div>
           <Breadcrumb>
@@ -66,7 +66,7 @@ export default function Navbar() {
             />
           </div>
           <Button
-            className="text-pink-600 border-pink-600 bg-transparent rounded-lg "
+            className="text-pink-600 border-pink-600 rounded-lg"
             size="sm"
             variant="outline"
           >
