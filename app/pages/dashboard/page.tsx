@@ -35,7 +35,7 @@ export default function Dashboard() {
       value: "$53k",
       icon: ChairRounded,
       bgColor: "bg-gradient-to-t from-black to-gray-500",
-      tagNode:  <span className="text-green-600">+55%</span> ,
+      tagNode: <span className="text-green-600">+55%</span>,
       tagLine: "than last week",
     },
     {
@@ -45,7 +45,6 @@ export default function Dashboard() {
       bgColor: "bg-gradient-to-t from-pink-500 to-pink-400",
       tagNode: <span className="text-green-600">+3%</span>,
       tagLine: "than last month",
-      
     },
     {
       title: "New Clients",
@@ -115,15 +114,15 @@ export default function Dashboard() {
     },
   ];
 
-const barChartData = [
-  { day: "M", value: 45 },
-  { day: "T", value: 18 },
-  { day: "W", value: 8 },
-  { day: "T", value: 20 },
-  { day: "F", value: 48 },
-  { day: "S", value: 5 },
-  { day: "S", value: 35 },
-]
+  const barChartData = [
+    { day: "M", value: 45 },
+    { day: "T", value: 18 },
+    { day: "W", value: 8 },
+    { day: "T", value: 20 },
+    { day: "F", value: 48 },
+    { day: "S", value: 5 },
+    { day: "S", value: 35 },
+  ];
   const orders = [
     {
       icon: DollarSign,
@@ -162,15 +161,15 @@ const barChartData = [
       color: "text-gray-500",
     },
   ];
-const data = [
-  { name: 'M', views: 45 },
-  { name: 'T', views: 12 },
-  { name: 'W', views: 34 },
-  { name: 'T', views: 58 },
-  { name: 'F', views: 23 },
-  { name: 'S', views: 7 },
-  { name: 'S', views: 50 },
-];
+  const data = [
+    { name: "M", views: 45 },
+    { name: "T", views: 12 },
+    { name: "W", views: 34 },
+    { name: "T", views: 58 },
+    { name: "F", views: 23 },
+    { name: "S", views: 7 },
+    { name: "S", views: 50 },
+  ];
   return (
     <div className="flex h-screen bg-gray-100">
       <div className="flex-1 flex flex-col overflow-hidden">
@@ -187,11 +186,22 @@ const data = [
           </div>
 
           {/* Charts Row */}
-           <Card className="bg-pink-500 text-white">
-            <CardContent className="p-6">
-              <PinkBarChart data={barChartData} />
-            </CardContent>
-          </Card>
+
+          <StatCard
+            title={"Website view"}
+            value={"2300"}
+            tagNode={<span className="text-green-600">+55%</span>}
+            tagLine={"than last week"}
+            bgColor={"bg-pink-500"}
+            isGraph={true}
+            icon={
+              <Card className="bg-pink-500 text-white">
+                <CardContent className="p-6">
+                  <PinkBarChart data={barChartData} />
+                </CardContent>
+              </Card>
+            }
+          />
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
             {/* Website Views Chart */}
             <Card>
