@@ -92,7 +92,7 @@ export default function Dashboard() {
                 </span>
               }
               title="Orders Overview"
-              value="30 done this month"
+              value="this month"
             />
           </div>
         </main>
