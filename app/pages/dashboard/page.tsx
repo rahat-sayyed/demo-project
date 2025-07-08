@@ -25,6 +25,8 @@ import {
 } from "lucide-react";
 import StatCard from "@/components/cards/statCard";
 import { ChairRounded, PersonRounded } from "@mui/icons-material";
+import { reverse } from "dns";
+import { PinkBarChart } from "@/components/charts/websiteViewChart";
 
 export default function Dashboard() {
   const statsCards = [
@@ -113,6 +115,15 @@ export default function Dashboard() {
     },
   ];
 
+const barChartData = [
+  { day: "M", value: 45 },
+  { day: "T", value: 18 },
+  { day: "W", value: 8 },
+  { day: "T", value: 20 },
+  { day: "F", value: 48 },
+  { day: "S", value: 5 },
+  { day: "S", value: 35 },
+]
   const orders = [
     {
       icon: DollarSign,
@@ -151,7 +162,15 @@ export default function Dashboard() {
       color: "text-gray-500",
     },
   ];
-
+const data = [
+  { name: 'M', views: 45 },
+  { name: 'T', views: 12 },
+  { name: 'W', views: 34 },
+  { name: 'T', views: 58 },
+  { name: 'F', views: 23 },
+  { name: 'S', views: 7 },
+  { name: 'S', views: 50 },
+];
   return (
     <div className="flex h-screen bg-gray-100">
       <div className="flex-1 flex flex-col overflow-hidden">
@@ -168,6 +187,11 @@ export default function Dashboard() {
           </div>
 
           {/* Charts Row */}
+           <Card className="bg-pink-500 text-white">
+            <CardContent className="p-6">
+              <PinkBarChart data={barChartData} />
+            </CardContent>
+          </Card>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
             {/* Website Views Chart */}
             <Card>

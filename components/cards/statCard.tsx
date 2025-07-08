@@ -10,6 +10,7 @@ interface statCardProps {
   tagLine: string;
   icon: React.ReactNode;
   bgColor: string;
+  isGraph?: boolean;
 }
 export default function StatCard({
   title,
@@ -18,6 +19,7 @@ export default function StatCard({
   tagNode,
   tagLine,
   bgColor,
+  isGraph,
 }: statCardProps) {
   return (
     <div className="relative p-2">
@@ -33,6 +35,7 @@ export default function StatCard({
               <CustomCardHeader
                 title={title}
                 value={value}
+                reverse={isGraph}
                 className="text-right self-end"
               />
               <Separator />
