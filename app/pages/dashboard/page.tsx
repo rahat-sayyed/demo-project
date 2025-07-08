@@ -16,66 +16,65 @@ import { Progress } from "@/components/ui/progress";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { projects } from "@/data/tableData";
 import { ChairRounded, PersonRounded } from "@mui/icons-material";
+import { ArrowUp, Check } from "lucide-react";
 export default function Dashboard() {
   const timelineContent = timelineItems.map((item, index) => {
-  const IconComponent = item.icon;
-  return (
-    <div key={index} className="relative flex items-start gap-4">
-    
-      <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white">
-        <IconComponent className={`h-4 w-4 ${item.iconColor}`} />
-      </div>
+    const IconComponent = item.icon;
+    return (
+      <div key={index} className="relative flex items-start gap-4">
+        <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white">
+          <IconComponent className={`h-4 w-4 ${item.iconColor}`} />
+        </div>
 
-      
         <div
           className="absolute left-[15px] top-8 h-[calc(100%-1rem)] w-[1px] bg-gray-300"
           style={{ transform: "translateX(-50%)" }}
         />
 
-      
-      <div className="flex-1 min-w-0 pb-2">
-        <p className="text-sm font-medium text-gray-900 leading-5">{item.title}</p>
-        <p className="text-xs text-gray-500 mt-1">{item.timestamp}</p>
+        <div className="flex-1 min-w-0 pb-2">
+          <p className="text-sm font-semibold text-gray-900 leading-5">
+            {item.title}
+          </p>
+          <p className="text-xs text-gray-500 mt-1">{item.timestamp}</p>
+        </div>
       </div>
-    </div>
-  );
-});
+    );
+  });
 
-
-// const statsCards = [
-//     {
-//       title: "Today's Money",
-//       value: "$53k",
-//       icon: ChairRounded,
-//       bgColor: "bg-gradient-to-t from-black to-gray-500",
-//       tagNode: <span className="text-green-600">+55%</span>,
-//       tagLine: "than last week",
-//     },
-//     {
-//       title: "Today's Users",
-//       value: "2,300",
-//       icon: PersonRounded,
-//       bgColor: "bg-gradient-to-t from-pink-500 to-pink-400",
-//       tagNode: <span className="text-green-600">+3%</span>,
-//       tagLine: "than last month",
-//     },
-//     {
-//       title: "New Clients",
-//       value: "3,462",
-//       icon: PersonRounded,
-//       bgColor: "bg-gradient-to-t from-green-500 to-green-400",
-//       tagNode: <span className="text-red-600">-2%</span>,
-//       tagLine: "than yesterday",
-//     },
-//     {
-//       title: "Sales",
-//       value: "$103,430",
-//       icon: ChairRounded,
-//       bgColor: "bg-gradient-to-t from-blue-500 to-blue-400",
-//       tagNode: <span className="text-green-600">+55%</span>,
-//       tagLine: "than yesterday",
-//     },
-//   ];
+  // const statsCards = [
+  //     {
+  //       title: "Today's Money",
+  //       value: "$53k",
+  //       icon: ChairRounded,
+  //       bgColor: "bg-gradient-to-t from-black to-gray-500",
+  //       tagNode: <span className="text-green-600">+55%</span>,
+  //       tagLine: "than last week",
+  //     },
+  //     {
+  //       title: "Today's Users",
+  //       value: "2,300",
+  //       icon: PersonRounded,
+  //       bgColor: "bg-gradient-to-t from-pink-500 to-pink-400",
+  //       tagNode: <span className="text-green-600">+3%</span>,
+  //       tagLine: "than last month",
+  //     },
+  //     {
+  //       title: "New Clients",
+  //       value: "3,462",
+  //       icon: PersonRounded,
+  //       bgColor: "bg-gradient-to-t from-green-500 to-green-400",
+  //       tagNode: <span className="text-red-600">-2%</span>,
+  //       tagLine: "than yesterday",
+  //     },
+  //     {
+  //       title: "Sales",
+  //       value: "$103,430",
+  //       icon: ChairRounded,
+  //       bgColor: "bg-gradient-to-t from-blue-500 to-blue-400",
+  //       tagNode: <span className="text-green-600">+55%</span>,
+  //       tagLine: "than yesterday",
+  //     },
+  //   ];
 
   return (
     <div className="flex bg-gray-100">
@@ -103,8 +102,12 @@ export default function Dashboard() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <DataCard
               title="Projects"
-              value="30 done this month"
-              icon="📊"
+              value="this month"
+              icon={
+                <span className="font-semibold">
+                  <Check className="size-4 inline-block text-blue-500" /> 30 done
+                </span>
+              }
               showMore
               content={TableContent()}
               className="lg:col-span-2"
@@ -112,11 +115,12 @@ export default function Dashboard() {
             <DataCard
               title="Orders Overview"
               value="30 done this month"
-              icon="📊"
-              content={<div className="grid gap-3">
-              {timelineContent}
-              </div>
-            }
+              icon={
+                <span className="font-semibold">
+                  <ArrowUp className="size-4 inline-block text-green-500" /> 24%
+                </span>
+              }
+              content={<div className="grid gap-3">{timelineContent}</div>}
             />
           </div>
         </main>

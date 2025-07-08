@@ -43,7 +43,7 @@ export default function StatCard({
                 className={isGraph ? "" :"text-right self-end"}
               />
               <Separator />
-              <div className="flex items-center mt-2 text-sm">
+              <div className="flex items-center mt-2 text-sm text-gray-600">
                {tagNode} &nbsp;{tagLine}
               </div>
             </div>
