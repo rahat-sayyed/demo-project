@@ -1,13 +1,10 @@
-import { cn } from "@/lib/utils";
-import { MoreHorizontal, MoreVertical } from "lucide-react";
+import { MoreVertical } from "lucide-react";
 import React from "react";
 import { Button } from "../ui/button";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 interface CardHeaderProps {
   title: string;
@@ -15,16 +12,18 @@ interface CardHeaderProps {
   icon: React.ReactNode;
   showMore?:boolean;
   content: React.ReactNode
+  className?: string
 }
 export default function DataCard({
   title,
   value,
   icon,
   showMore,
-  content
+  content,
+  className
 }: CardHeaderProps) {
   return (
-     <Card className="lg:col-span-2">
+     <Card className={className}>
           <CardHeader>
 
     <div className="flex items-center justify-between">

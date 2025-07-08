@@ -60,13 +60,14 @@ export default function Dashboard() {
           </div>
 
           {/* Table Row & Timeline */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
             <DataCard
               title="Projects"
               value="30 done this month"
               icon="📊"
               showMore
               content={TableContent()}
+              className="lg:col-span-2"
             />
             <DataCard
               title="Orders Overview"
@@ -86,16 +87,16 @@ function TableContent() {
     <Table>
       <TableHeader>
         <TableRow className="border-b border-gray-200">
-          <TableHead className="text-xs font-medium text-gray-500 uppercase tracking-wider py-3">
+          <TableHead className="text-xs font-medium text-gray-500 uppercase tracking-wider py-2">
             Companies
           </TableHead>
-          <TableHead className="text-xs font-medium text-gray-500 uppercase tracking-wider py-3">
+          <TableHead className="text-xs font-medium text-gray-500 uppercase tracking-wider py-2">
             Members
           </TableHead>
-          <TableHead className="text-xs font-medium text-gray-500 uppercase tracking-wider py-3">
+          <TableHead className="text-xs font-medium text-gray-500 uppercase tracking-wider py-2">
             Budget
           </TableHead>
-          <TableHead className="text-xs font-medium text-gray-500 uppercase tracking-wider py-3">
+          <TableHead className="text-xs font-medium text-gray-500 uppercase tracking-wider py-2">
             Completion
           </TableHead>
         </TableRow>
@@ -106,7 +107,7 @@ function TableContent() {
             key={project.id}
             className="border-b border-gray-100 hover:bg-gray-50"
           >
-            <TableCell className="py-4">
+            <TableCell className="py-2">
               <div className="flex items-center gap-3">
                 <div
                   className={`w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg`}
@@ -118,7 +119,7 @@ function TableContent() {
                 </span>
               </div>
             </TableCell>
-            <TableCell className="py-4">
+            <TableCell className="py-2">
               <div className="flex -space-x-3">
                 {project.members.map((member, index) => (
                   <Avatar key={index} className="w-6 h-6 border-1 border-white">
@@ -133,12 +134,12 @@ function TableContent() {
                 ))}
               </div>
             </TableCell>
-            <TableCell className="py-4">
+            <TableCell className="py-2">
               <span className="font-medium text-gray-900">
                 {project.budget}
               </span>
             </TableCell>
-            <TableCell className="py-4">
+            <TableCell className="py-2">
               <div className="items-center gap-3">
                 <p className="text-sm font-medium text-gray-900 min-w-[40px]">
                   {project.completion}%
