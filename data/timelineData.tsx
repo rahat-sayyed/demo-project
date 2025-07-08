@@ -1,4 +1,11 @@
-import { Triangle, Code, ShoppingCart, CreditCard, Key, FolderOpen } from "lucide-react";
+import {
+  Triangle,
+  Code,
+  ShoppingCart,
+  CreditCard,
+  Key,
+  FolderOpen,
+} from "lucide-react";
 
 export const timelineItems = [
   {

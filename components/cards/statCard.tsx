@@ -25,31 +25,31 @@ export default function StatCard({
   return (
     <div className="mt-3">
       <Card className="relative rounded-lg">
-     {!isGraph &&
-      <div
-      className={` p-4 rounded-lg text-white ${bgColor} flex items-center justify-center absolute -top-3 left-3 z-10`}
-      >
-        {icon}
-      </div>
-      }
+        {!isGraph && (
+          <div
+            className={` p-4 rounded-lg text-white ${bgColor} flex items-center justify-center absolute -top-3 left-3 z-10`}
+          >
+            {icon}
+          </div>
+        )}
         <CardContent className={cn(isGraph ? "p-4" : "p-3")}>
           <div className="flex items-center justify-between">
             <div className="flex flex-col w-full gap-2">
-             {isGraph && <div className="w-full -mt-8">{icon}</div>}
+              {isGraph && <div className="w-full -mt-8">{icon}</div>}
               <CustomCardHeader
                 title={title}
                 value={value}
                 reverse={isGraph}
-                className={isGraph ? "" :"text-right self-end"}
+                className={isGraph ? "" : "text-right self-end"}
               />
               <Separator />
               <div className="flex items-center mt-2 text-sm text-gray-600">
-               {tagNode} &nbsp;{tagLine}
+                {tagNode} &nbsp;{tagLine}
               </div>
             </div>
           </div>
         </CardContent>
       </Card>
-   </div>
+    </div>
   );
 }

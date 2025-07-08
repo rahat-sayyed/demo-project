@@ -19,9 +19,13 @@ export default function Footer() {
           <Link href="#">About Us</Link>
           <Link href="#">Blog</Link>
         </div>
-          <Button variant="secondary" size="icon" className="absolute right-0 rounded-full bg-gray-200 hover:bg-gray-300">
-            <Settings className="w-4 h-4" />
-          </Button>
+        <Button
+          variant="secondary"
+          size="icon"
+          className="absolute right-0 rounded-full bg-gray-200 hover:bg-gray-300"
+        >
+          <Settings className="w-4 h-4" />
+        </Button>
       </div>
     </footer>
   );

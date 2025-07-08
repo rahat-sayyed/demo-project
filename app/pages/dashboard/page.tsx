@@ -26,9 +26,7 @@ export default function Dashboard() {
           <IconComponent className={`h-4 w-4 ${item.iconColor}`} />
         </div>
 
-        <div
-          className="absolute left-[15px] top-8 h-[calc(100%-1rem)] w-[1px] bg-gray-300 translate-x-1/2"
-        />
+        <div className="absolute left-[15px] top-8 h-[calc(100%-1rem)] w-[1px] bg-gray-300 translate-x-1/2" />
 
         <div className="flex-1 min-w-0 pb-2">
           <p className="text-sm font-semibold text-gray-900 leading-5">
@@ -104,7 +102,8 @@ export default function Dashboard() {
               value="this month"
               icon={
                 <span className="font-semibold">
-                  <Check className="size-4 inline-block text-blue-500" /> 30 done
+                  <Check className="size-4 inline-block text-blue-500" /> 30
+                  done
                 </span>
               }
               showMore

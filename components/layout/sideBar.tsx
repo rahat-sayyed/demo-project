@@ -43,7 +43,7 @@ export default function SideBar() {
             <span className="font-medium text-sm">Material Dashboard 2</span>
           </div>
         </div>
-<Separator/>
+        <Separator />
         <nav className="flex-1 p-4">
           <div className="space-y-1">
             {sidebarItems.map((item) => (
@@ -82,4 +82,3 @@ export default function SideBar() {
     </div>
   );
 }
-

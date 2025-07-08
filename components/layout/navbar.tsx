@@ -31,25 +31,25 @@ export default function Navbar() {
         <div>
           <Breadcrumb>
             <BreadcrumbList>
-              {pathSegments.length > 0 ?
-              pathSegments.map((segment, index) => {
-                const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
-                const isLast = index === pathSegments.length - 1;
-                return (
-                  <React.Fragment key={index+href}>
-                    <BreadcrumbItem >
-                   
-                        <BreadcrumbLink href={href} className={`${isLast ? "text-gray-700" : ""}`}>
-                          {formatSegment(segment)}
-                        </BreadcrumbLink>
-                      
-                    </BreadcrumbItem>
-                   {!isLast && <BreadcrumbSeparator />}
-                  </React.Fragment>
-                );
-              })
-            :
-            "Home"}
+              {pathSegments.length > 0
+                ? pathSegments.map((segment, index) => {
+                    const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
+                    const isLast = index === pathSegments.length - 1;
+                    return (
+                      <React.Fragment key={index + href}>
+                        <BreadcrumbItem>
+                          <BreadcrumbLink
+                            href={href}
+                            className={`${isLast ? "text-gray-700" : ""}`}
+                          >
+                            {formatSegment(segment)}
+                          </BreadcrumbLink>
+                        </BreadcrumbItem>
+                        {!isLast && <BreadcrumbSeparator />}
+                      </React.Fragment>
+                    );
+                  })
+                : "Home"}
             </BreadcrumbList>
           </Breadcrumb>
           <h1 className="text-lg font-semibold text-gray-900">
@@ -58,7 +58,10 @@ export default function Navbar() {
         </div>
         <div className="flex items-center gap-2">
           <div className="relative">
-            <Input placeholder="Type here..." className="p-2 md:min-w-40 bg-transparent" />
+            <Input
+              placeholder="Type here..."
+              className="p-2 md:min-w-40 bg-transparent"
+            />
           </div>
           <Button
             variant="outline"
