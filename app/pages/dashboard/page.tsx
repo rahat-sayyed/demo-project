@@ -24,7 +24,7 @@ export default function Dashboard() {
     return (
       <div key={index} className="relative flex items-start gap-4">
         <div className="relative z-10 flex h-8 w-8 items-center justify-center rounded-full bg-white ">
-          <IconComponent className={`h-4 w-4 ${item.iconColor}`} />
+          <IconComponent className={`size-3 ${item.iconColor}`} />
         </div>
 
         <div className="absolute left-[15px] top-8 h-[calc(100%-1rem)] w-[1px] bg-gray-300 translate-x-1/2" />
@@ -39,40 +39,6 @@ export default function Dashboard() {
     );
   });
 
-  // const statsCards = [
-  //     {
-  //       title: "Today's Money",
-  //       value: "$53k",
-  //       icon: ChairRounded,
-  //       bgColor: "bg-gradient-to-t from-black to-gray-500",
-  //       tagNode: <span className="text-green-600">+55%</span>,
-  //       tagLine: "than last week",
-  //     },
-  //     {
-  //       title: "Today's Users",
-  //       value: "2,300",
-  //       icon: PersonRounded,
-  //       bgColor: "bg-gradient-to-t from-pink-500 to-pink-400",
-  //       tagNode: <span className="text-green-600">+3%</span>,
-  //       tagLine: "than last month",
-  //     },
-  //     {
-  //       title: "New Clients",
-  //       value: "3,462",
-  //       icon: PersonRounded,
-  //       bgColor: "bg-gradient-to-t from-green-500 to-green-400",
-  //       tagNode: <span className="text-red-600">-2%</span>,
-  //       tagLine: "than yesterday",
-  //     },
-  //     {
-  //       title: "Sales",
-  //       value: "$103,430",
-  //       icon: ChairRounded,
-  //       bgColor: "bg-gradient-to-t from-blue-500 to-blue-400",
-  //       tagNode: <span className="text-green-600">+55%</span>,
-  //       tagLine: "than yesterday",
-  //     },
-  //   ];
 
   return (
     <div className="flex ">
