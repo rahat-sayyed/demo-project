@@ -8,7 +8,7 @@ interface PinkBarChartProps {
   className?: string
 }
 
-export function PinkBarChart({ data, className = "h-64" }: PinkBarChartProps) {
+export function WebsiteViewChart({ data, className = "h-44" }: PinkBarChartProps) {
   return (
     <ChartContainer
       config={{

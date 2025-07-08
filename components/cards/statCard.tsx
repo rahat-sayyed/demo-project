@@ -23,19 +23,19 @@ export default function StatCard({
   isGraph,
 }: statCardProps) {
   return (
-    <div className="relative p-2 h-fit flex flex-col justify-end">
+    // <div className="relative p-2 h-fit flex flex-col justify-end">
+      <Card className="relative rounded-lg">
      {!isGraph &&
       <div
-      className={` p-4 rounded-lg text-white ${bgColor} flex items-center justify-center absolute -top-1 left-5 z-10`}
+      className={` p-4 rounded-lg text-white ${bgColor} flex items-center justify-center absolute -top-3 left-3 z-10`}
       >
         {icon}
       </div>
       }
-      <Card className="relative overflow-hidden rounded-lg">
         <CardContent className={cn(isGraph ? "p-4" : "p-3")}>
           <div className="flex items-center justify-between">
             <div className="flex flex-col w-full gap-2">
-             {isGraph && <div className="w-full ">{icon}</div>}
+             {isGraph && <div className="w-full -mt-8">{icon}</div>}
               <CustomCardHeader
                 title={title}
                 value={value}
@@ -50,6 +50,6 @@ export default function StatCard({
           </div>
         </CardContent>
       </Card>
-    </div>
+    // </div>
   );
 }

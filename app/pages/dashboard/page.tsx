@@ -25,8 +25,7 @@ import {
 } from "lucide-react";
 import StatCard from "@/components/cards/statCard";
 import { ChairRounded, PersonRounded } from "@mui/icons-material";
-import { reverse } from "dns";
-import { PinkBarChart } from "@/components/charts/websiteViewChart";
+import { WebsiteViewChart } from "@/components/charts/websiteViewChart";
 
 export default function Dashboard() {
   const statsCards = [
@@ -197,7 +196,7 @@ export default function Dashboard() {
             icon={
               <Card className="bg-pink-500 text-white">
                 <CardContent className="p-6">
-                  <PinkBarChart data={barChartData} />
+                  <WebsiteViewChart data={barChartData} />
                 </CardContent>
               </Card>
             }
