@@ -1,6 +1,5 @@
 import { CustomLineChart } from "@/components/charts/lineChart";
 import { WebsiteViewChart } from "@/components/charts/websiteViewChart";
-import { Card, CardContent } from "@/components/ui/card";
 import { Clock } from "lucide-react";
 
 const lineChartData = [
