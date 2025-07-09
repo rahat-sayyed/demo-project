@@ -34,7 +34,7 @@ export default function CustomCardHeader({
           "text-xs mb-1",
           !reverse
             ? "font-light text-gray-500"
-            : "text-xl font-bold text-gray-900",
+            : "text-base font-bold text-gray-900 ",
         )}
       >
         {title}

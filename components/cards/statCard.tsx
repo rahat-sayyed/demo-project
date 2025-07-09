@@ -54,7 +54,7 @@ export default function StatCard({
         <CardContent className={cn(isGraph ? "p-4" : "p-3")}>
           <div className="flex items-center justify-between">
             <div className="flex flex-col w-full gap-2">
-              {isGraph && <div className="w-full -mt-8">{icon}</div>}
+              {isGraph && <div className="w-full -mt-8 mb-4">{icon}</div>}
               <CustomCardHeader
                 className={isGraph ? "" : "text-right self-end"}
                 reverse={isGraph}
