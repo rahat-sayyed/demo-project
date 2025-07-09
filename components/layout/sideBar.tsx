@@ -52,8 +52,8 @@ export default function SideBar() {
             {sidebarItems.map((item) => (
               <SideBarButtons
                 key={item.name}
-                isActive={activeNav === item.name}
                 icon={<item.icon />}
+                isActive={activeNav === item.name}
                 name={item.name}
                 onclick={() => setActiveNav(item.name)}
               />

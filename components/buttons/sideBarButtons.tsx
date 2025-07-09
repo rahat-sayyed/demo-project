@@ -1,7 +1,5 @@
 import React from "react";
 
-
-
 /**
  * A button for the side bar.
  *
@@ -13,7 +11,7 @@ import React from "react";
 export default function SideBarButtons({
   icon,
   name,
-  isActive=false,
+  isActive = false,
   onclick,
 }: {
   icon: React.ReactNode;

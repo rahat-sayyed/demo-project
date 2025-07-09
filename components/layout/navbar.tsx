@@ -30,6 +30,7 @@ export default function Navbar() {
   const href = (index: number) =>
     `/${pathSegments.slice(0, index + 1).join("/")}`;
   const isLast = (index: number) => index === pathSegments.length - 1;
+
   return (
     <header className="px-6 py-4">
       <div className="flex items-center justify-between">
