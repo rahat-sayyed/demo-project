@@ -33,7 +33,7 @@ export default function CustomCardHeader({
         className={cn(
           "text-xs mb-1",
           !reverse
-            ? "font-light text-gray-600"
+            ? "font-light text-gray-500"
             : "text-xl font-bold text-gray-900",
         )}
       >
@@ -43,7 +43,7 @@ export default function CustomCardHeader({
         className={cn(
           "text-xs mb-1",
           reverse
-            ? "font-light text-gray-600"
+            ? "font-light text-gray-500"
             : "text-xl font-bold text-gray-900",
         )}
       >

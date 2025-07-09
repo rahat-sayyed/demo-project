@@ -62,7 +62,7 @@ export default function StatCard({
                 value={value}
               />
               <Separator />
-              <div className="flex items-center mt-2 text-xs text-gray-500">
+              <div className="flex items-center mt-2 text-xs text-gray-400">
                 {tagNode} &nbsp;{tagLine}
               </div>
             </div>
