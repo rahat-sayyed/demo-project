@@ -34,7 +34,7 @@ export default function Dashboard() {
           <p className="text-sm font-semibold text-gray-900 leading-5">
             {item.title}
           </p>
-          <p className="text-xs text-gray-500 mt-1">{item.timestamp}</p>
+          <p className="text-xs text-gray-500 mt-1 font-bold">{item.timestamp}</p>
         </div>
       </div>
     );
