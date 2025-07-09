@@ -105,7 +105,7 @@ function TableContent() {
   return (
     <Table>
       <TableHeader>
-        <TableRow className="border-b border-gray-200">
+        <TableRow className="border-b border-gray-200 hover:bg-transparent">
           <TableHead className="text-xs font-medium text-gray-500 uppercase tracking-wider py-2">
             Companies
           </TableHead>
@@ -115,7 +115,7 @@ function TableContent() {
           <TableHead className="text-xs font-medium text-gray-500 uppercase tracking-wider py-2">
             Budget
           </TableHead>
-          <TableHead className="text-xs font-medium text-gray-500 uppercase tracking-wider py-2">
+          <TableHead className="text-xs font-medium text-gray-500 uppercase tracking-wider py-2 text-center">
             Completion
           </TableHead>
         </TableRow>
@@ -126,7 +126,7 @@ function TableContent() {
             key={project.id}
             className="border-b border-gray-100 hover:bg-gray-50"
           >
-            <TableCell className="py-2">
+            <TableCell  className="py-2 px-1">
               <div className="flex items-center gap-3">
                 <div
                   className={`w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg`}
@@ -154,13 +154,13 @@ function TableContent() {
               </div>
             </TableCell>
             <TableCell className="py-2">
-              <span className="font-semibold text-gray-600">
+              <span className="font-semibold text-gray-500">
                 {project.budget}
               </span>
             </TableCell>
             <TableCell className="py-2">
               <div className="items-center gap-3">
-                <p className="text-sm font-medium text-gray-900 min-w-[40px]">
+                <p className="text-sm font-semibold text-gray-500 min-w-[40px]">
                   {project.completion}%
                 </p>
                 <div className="flex-1 max-w-[120px]">
