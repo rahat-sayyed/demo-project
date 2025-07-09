@@ -6,7 +6,7 @@ export const statsCards = [
     value: "$53k",
     icon: ChairRounded,
     bgColor: "black",
-    tagNode: <span className="text-green-600">+55%</span>,
+    tagNode: <span className="text-green-600 font-bold">+55%</span>,
     tagLine: "than last week",
   },
   {
@@ -14,7 +14,7 @@ export const statsCards = [
     value: "2,300",
     icon: PersonRounded,
     bgColor: "pink",
-    tagNode: <span className="text-green-600">+3%</span>,
+    tagNode: <span className="text-green-600 font-bold">+3%</span>,
     tagLine: "than last month",
   },
   {
@@ -22,7 +22,7 @@ export const statsCards = [
     value: "3,462",
     icon: PersonRounded,
     bgColor: "green",
-    tagNode: <span className="text-red-600">-2%</span>,
+    tagNode: <span className="text-red-600 font-bold">-2%</span>,
     tagLine: "than yesterday",
   },
   {
@@ -30,7 +30,7 @@ export const statsCards = [
     value: "$103,430",
     icon: ChairRounded,
     bgColor: "blue",
-    tagNode: <span className="text-green-600">+5%</span>,
+    tagNode: <span className="text-green-600 font-bold">+5%</span>,
     tagLine: "than yesterday",
   },
 ];
