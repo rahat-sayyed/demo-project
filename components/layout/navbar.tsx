@@ -49,7 +49,7 @@ export default function Navbar() {
                             {formatSegment(segment)}
                           </BreadcrumbLink>
                         </BreadcrumbItem>
-                        {!isLast && <BreadcrumbSeparator />}
+                        {!isLast(index) && <BreadcrumbSeparator />}
                       </React.Fragment>
                     );
                   })
