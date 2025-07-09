@@ -9,7 +9,6 @@ import TableContent from "@/components/data/tableContent";
 import TimelineContent from "@/components/data/timelineContent";
 
 export default function Dashboard() {
-
   return (
     <div className="flex ">
       <div className="flex-1 flex flex-col overflow-hidden">
@@ -37,7 +36,7 @@ export default function Dashboard() {
             <DataCard
               showMore
               className="lg:col-span-2"
-              content={<TableContent/>}
+              content={<TableContent />}
               icon={
                 <span className="font-bold">
                   <Check
@@ -51,7 +50,7 @@ export default function Dashboard() {
               value="this month"
             />
             <DataCard
-              content={<div className="grid gap-3">{<TimelineContent/>}</div>}
+              content={<div className="grid gap-3">{<TimelineContent />}</div>}
               icon={
                 <span className="font-bold">
                   <ArrowUp
@@ -70,5 +69,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
-

@@ -35,7 +35,7 @@ export default function TableContent() {
             key={project.id}
             className="border-b border-gray-100 hover:bg-gray-50"
           >
-            <TableCell  className="py-2 px-1">
+            <TableCell className="py-2 px-1">
               <div className="flex items-center gap-3">
                 <div
                   className={`w-10 h-10 rounded-lg flex items-center justify-center text-white text-lg`}

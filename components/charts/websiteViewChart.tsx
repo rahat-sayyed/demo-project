@@ -50,17 +50,17 @@ export function WebsiteViewChart({
         <XAxis
           axisLine={false}
           dataKey="day"
+          style={{ fill: "white" }}
           tick={{ fill: "#ffffff", fontSize: 12 }}
           tickLine={false}
-          style={{ fill: "white" }}
         />
         <YAxis
           axisLine={false}
           domain={[0, 60]}
+          style={{ fill: "white" }}
           tick={{ fill: "#ffffff", fontSize: 12 }}
           tickLine={false}
           ticks={[0, 20, 40, 60]}
-          style={{ fill: "white" }}
         />
         <Bar dataKey="value" fill="#ffffff" radius={[4, 4, 0, 0]} />
       </BarChart>

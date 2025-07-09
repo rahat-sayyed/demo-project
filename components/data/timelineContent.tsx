@@ -1,5 +1,6 @@
-import { timelineItems } from "@/data/timelineData";
 import React from "react";
+
+import { timelineItems } from "@/data/timelineData";
 
 export default function TimelineContent() {
   const timelineContent = timelineItems.map((item, index) => (
@@ -14,9 +15,7 @@ export default function TimelineContent() {
         <p className="text-sm font-semibold text-gray-900 leading-5">
           {item.title}
         </p>
-        <p className="text-xs text-gray-500 mt-1 font-bold">
-          {item.timestamp}
-        </p>
+        <p className="text-xs text-gray-500 mt-1 font-bold">{item.timestamp}</p>
       </div>
     </div>
   ));
