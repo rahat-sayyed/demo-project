@@ -61,12 +61,12 @@ export default function Navbar() {
         <div className="flex items-center gap-2">
           <div className="relative">
             <Input
-              className="p-2 md:min-w-40 bg-transparent"
+              className="p-2 md:min-w-40 bg-transparent border-1.5 focus-visible:ring-0 focus-visible:ring-offset-0 hover:border-black focus-visible:border-pink-600"
               placeholder="Type here..."
             />
           </div>
           <Button
-            className="text-pink-600 border-pink-600 rounded-lg"
+            className="text-sm px-4 text-pink-600 border-pink-600 rounded-lg hover:bg-pink-200/20 hover:text-pink-600 hover:border-pink-700"
             size="sm"
             variant="outline"
           >
