@@ -58,6 +58,7 @@ export function CustomLineChart({
           dataKey="month"
           tick={{ fill: "#ffffff", fontSize: 12 }}
           tickLine={false}
+          style={{ fill: "white" }}
         />
         <YAxis
           axisLine={false}
@@ -65,6 +66,7 @@ export function CustomLineChart({
           tick={{ fill: "#ffffff", fontSize: 12 }}
           tickLine={false}
           ticks={[0, 200, 400, 600]}
+          style={{ fill: "white" }}
         />
         <Line
           dataKey="value"
