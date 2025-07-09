@@ -16,6 +16,7 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+// Converts a string to title case (e.g. "path-segment becomes "Path Segment").
 const formatSegment = (segment: string) =>
   segment
     .split("-")
@@ -25,7 +26,10 @@ const formatSegment = (segment: string) =>
 export default function Navbar() {
   const pathname = usePathname();
   const pathSegments = pathname.split("/").filter((segment) => segment);
-
+  // Takes an index and creates a href by joining path segments up to that index.
+  const href = (index: number) =>
+    `/${pathSegments.slice(0, index + 1).join("/")}`;
+  const isLast = (index: number) => index === pathSegments.length - 1;
   return (
     <header className="px-6 py-4">
       <div className="flex items-center justify-between">
@@ -34,15 +38,12 @@ export default function Navbar() {
             <BreadcrumbList>
               {pathSegments.length > 0
                 ? pathSegments.map((segment, index) => {
-                    const href = `/${pathSegments.slice(0, index + 1).join("/")}`;
-                    const isLast = index === pathSegments.length - 1;
-
                     return (
-                      <React.Fragment key={index + href}>
+                      <React.Fragment key={index}>
                         <BreadcrumbItem>
                           <BreadcrumbLink
-                            className={`${isLast ? "text-gray-700" : ""}`}
-                            href={href}
+                            className={`${isLast(index) ? "text-gray-700" : ""}`}
+                            href={href(index)}
                           >
                             {formatSegment(segment)}
                           </BreadcrumbLink>
