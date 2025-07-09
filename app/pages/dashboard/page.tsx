@@ -69,10 +69,10 @@ export default function Dashboard() {
               className="lg:col-span-2"
               content={TableContent()}
               icon={
-                <span className="font-semibold">
+                <span className="font-bold">
                   <Check
                     className="size-4 inline-block text-blue-500"
-                    strokeWidth={3}
+                    strokeWidth={4}
                   />{" "}
                   30 done
                 </span>
@@ -83,10 +83,10 @@ export default function Dashboard() {
             <DataCard
               content={<div className="grid gap-3">{timelineContent}</div>}
               icon={
-                <span className="font-semibold">
+                <span className="font-bold">
                   <ArrowUp
                     className="size-4 inline-block text-green-500"
-                    strokeWidth={3}
+                    strokeWidth={4}
                   />{" "}
                   24%
                 </span>
