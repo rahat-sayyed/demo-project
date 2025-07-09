@@ -47,7 +47,7 @@ export default function RootLayout({
             <div className="fixed h-screen w-56">
               <SideBar />
             </div>
-            <div className="flex-1 ml-56 overflow-auto">
+            <div className="flex flex-col flex-1 ml-56 overflow-auto">
               <Navbar />
               <main className="flex-1">{children}</main>
               <Footer />

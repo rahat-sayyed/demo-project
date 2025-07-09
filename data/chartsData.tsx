@@ -40,8 +40,12 @@ export const chartsCardData = [
   },
   {
     title: "Daily Sales",
-    value: "(+15%) increase in today sales",
-    icon: <CustomLineChart data={lineChartData} variant="dark" />,
+    value: (
+      <>
+        (<span className="font-semibold">+15%</span>) increase in today sales
+      </>
+    ),
+    icon: <CustomLineChart data={lineChartData} variant="green" />,
     bgColor: "",
     tagNode: (
       <span className="">

@@ -3,6 +3,7 @@
 import { Line, LineChart, XAxis, YAxis, CartesianGrid } from "recharts";
 
 import { ChartContainer } from "@/components/ui/chart";
+import { cn } from "@/lib/utils";
 
 /**
  * LineChart component
@@ -30,7 +31,12 @@ export function CustomLineChart({
 
   return (
     <ChartContainer
-      className={`${className} bg-gray-800 text-white rounded-lg pt-1 pr-1`}
+      className={cn(
+        `${className} text-white rounded-lg pt-1 pr-1 shadow-md`,
+        variant === "dark"
+          ? "bg-gray-800 shadow-gray-800/60"
+          : "bg-green-500 shadow-green-500/60",
+      )}
       config={{
         value: {
           label: "Value",
@@ -55,12 +61,14 @@ export function CustomLineChart({
         <XAxis
           axisLine={false}
           dataKey="month"
+          style={{ fill: "white" }}
           tick={{ fill: "#ffffff", fontSize: 12 }}
           tickLine={false}
         />
         <YAxis
           axisLine={false}
           domain={[0, 600]}
+          style={{ fill: "white" }}
           tick={{ fill: "#ffffff", fontSize: 12 }}
           tickLine={false}
           ticks={[0, 200, 400, 600]}

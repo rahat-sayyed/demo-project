@@ -37,7 +37,7 @@ export default function DataCard({
       <CardHeader>
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-xl font-bold text-black">{title}</p>
+            <p className="font-bold text-black leading-9">{title}</p>
             <p className=" text-sm font-normal text-gray-600">
               {icon}&nbsp;{value}
             </p>

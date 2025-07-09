@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
  */
 interface CardHeaderProps {
   title: string;
-  value: string;
+  value: string | React.ReactNode;
   reverse?: boolean;
   className: string;
 }
@@ -33,8 +33,8 @@ export default function CustomCardHeader({
         className={cn(
           "text-xs mb-1",
           !reverse
-            ? "font-light text-gray-600"
-            : "text-xl font-bold text-gray-900",
+            ? "font-light text-gray-500"
+            : "text-base font-bold text-gray-900 ",
         )}
       >
         {title}
@@ -43,7 +43,7 @@ export default function CustomCardHeader({
         className={cn(
           "text-xs mb-1",
           reverse
-            ? "font-light text-gray-600"
+            ? "font-light text-gray-500"
             : "text-xl font-bold text-gray-900",
         )}
       >

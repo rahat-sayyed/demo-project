@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 interface statCardProps {
   title: string;
-  value: string;
+  value: string | React.ReactNode;
   tagNode: React.ReactNode;
   tagLine: string;
   icon: React.ReactNode;
@@ -42,7 +42,15 @@ export default function StatCard({
       <Card className="relative rounded-lg">
         {!isGraph && (
           <div
-            className={` p-4 rounded-lg text-white ${bgColor} flex items-center justify-center absolute -top-3 left-3 z-10`}
+            className={cn(
+              `p-4 rounded-lg text-white flex items-center justify-center absolute -top-3 left-3 z-10 shadow-md bg-gradient-to-t from-black to-gray-800/95 shadow-black/50`,
+              bgColor === "green" &&
+                "bg-gradient-to-t from-green-500 to-green-400/95 shadow-green-500/50",
+              bgColor === "pink" &&
+                "bg-gradient-to-t from-pink-500 to-pink-400/95 shadow-pink-500/50",
+              bgColor === "blue" &&
+                "bg-gradient-to-t from-blue-500 to-blue-400/95 shadow-blue-500/50",
+            )}
           >
             {icon}
           </div>
@@ -50,7 +58,7 @@ export default function StatCard({
         <CardContent className={cn(isGraph ? "p-4" : "p-3")}>
           <div className="flex items-center justify-between">
             <div className="flex flex-col w-full gap-2">
-              {isGraph && <div className="w-full -mt-8">{icon}</div>}
+              {isGraph && <div className="w-full -mt-8 mb-4">{icon}</div>}
               <CustomCardHeader
                 className={isGraph ? "" : "text-right self-end"}
                 reverse={isGraph}
@@ -58,7 +66,7 @@ export default function StatCard({
                 value={value}
               />
               <Separator />
-              <div className="flex items-center mt-2 text-xs text-gray-500">
+              <div className="flex items-center mt-2 text-xs text-gray-400">
                 {tagNode} &nbsp;{tagLine}
               </div>
             </div>
