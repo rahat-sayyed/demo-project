@@ -25,7 +25,7 @@ export function WebsiteViewChart({
 }: WebsiteViewChartProps) {
   return (
     <ChartContainer
-      className={`${className} bg-pink-500 text-white rounded-lg pt-1 pr-1`}
+      className={`${className} bg-pink-500 text-white rounded-lg pt-1 pr-1 shadow-md shadow-pink-500/60`}
       config={{
         value: {
           label: "Value",

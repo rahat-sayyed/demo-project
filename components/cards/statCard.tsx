@@ -42,7 +42,11 @@ export default function StatCard({
       <Card className="relative rounded-lg">
         {!isGraph && (
           <div
-            className={` p-4 rounded-lg text-white ${bgColor} flex items-center justify-center absolute -top-3 left-3 z-10`}
+            className={cn(`p-4 rounded-lg text-white flex items-center justify-center absolute -top-3 left-3 z-10 shadow-md bg-gradient-to-t from-black to-gray-800/95 shadow-black/50`,
+              bgColor ==="green" && "bg-gradient-to-t from-green-500 to-green-400/95 shadow-green-500/50",
+              bgColor ==="pink" && "bg-gradient-to-t from-pink-500 to-pink-400/95 shadow-pink-500/50",
+              bgColor ==="blue" && "bg-gradient-to-t from-blue-500 to-blue-400/95 shadow-blue-500/50",
+            )}
           >
             {icon}
           </div>
