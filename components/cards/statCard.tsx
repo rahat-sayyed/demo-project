@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 interface statCardProps {
   title: string;
-  value: string;
+  value: string | React.ReactNode;
   tagNode: React.ReactNode;
   tagLine: string;
   icon: React.ReactNode;

@@ -17,7 +17,7 @@ import { cn } from "@/lib/utils";
  */
 interface CardHeaderProps {
   title: string;
-  value: string;
+  value: string | React.ReactNode;
   reverse?: boolean;
   className: string;
 }
